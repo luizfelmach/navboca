@@ -1,3 +1,4 @@
+#!/usr/bin/python
 from hashlib import sha256
 from bs4 import BeautifulSoup
 from getpass import getpass
