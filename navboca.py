@@ -26,11 +26,15 @@ class NavBoca:
         trs = soup.find_all('tr')
         cont = 1
         for tr in range(3, len(trs)):
-            pessoa = trs[tr].find_all('td')[1].find('td').contents[0]
+            dados = trs[tr].find_all('td')[1].find_all('td')
+            pessoa = dados[0].contents[0]
+            progresso = dados[-1].contents[0].split(' ')[0]
+            tab = ' ' * (40 - len(pessoa) - len(str(cont)))
+            tot = len(dados) - 2
             if (pessoa.lower() == 'luiz felipe machado'):
                 pessoa = '\033[32m' + pessoa + '\033[0;0m'
             if tr % 2 == 0:
-                print(f'#{cont} {pessoa.lower()}')
+                print(f' #{cont}   {pessoa.lower()}{tab}{progresso}/{tot}')
                 cont += 1
 
 
