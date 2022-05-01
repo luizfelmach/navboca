@@ -4,7 +4,7 @@ from getpass import getpass
 import requests
 
 
-class RankingBoca:
+class NavBoca:
 
     def __init__(self, user, password):
         self.user = user
@@ -37,6 +37,6 @@ class RankingBoca:
 if __name__ == '__main__':
     user = input('User: ')
     password = getpass('Password: ')
-    rankingboca = RankingBoca(user, password)
-    rankingboca.login()
-    rankingboca.score()
+    nav = NavBoca(user, password)
+    nav.login()
+    nav.score()
