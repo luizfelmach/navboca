@@ -26,7 +26,7 @@ class NavBoca:
         soup = BeautifulSoup(response.text, 'html.parser')
         trs = soup.find_all('tr')
         cont = 1
-        for tr in range(3, len(trs)):
+        for tr in range(3, 23):
             dados = trs[tr].find_all('td')[1].find_all('td')
             pessoa = dados[0].contents[0]
             progresso = dados[-1].contents[0].split(' ')[0]
